@@ -158,12 +158,6 @@ Contributions are welcome! If you find any issues or have suggestions, feel free
 
 ---
 
-## 📄 License  
-
-This project is licensed under the MIT License.  
-
----
-
 ### 🚀 Ready to Deploy  
 
 Once the Docker image is pushed to Amazon ECR, you can pull it and run it locally or deploy it in your AWS environment.  
@@ -191,6 +185,6 @@ docker run -p 8080:8080 <your-ecr-uri>:<tag>
 <br>
 <img width="1342" alt="auth_ECR" src="https://github.com/user-attachments/assets/767bae3a-88fb-4b40-a3de-4034d7debae9">
 <br>
-<img width="1122" alt="create_aws_ecr_repo" src="https://github.com/user-attachments/assets/38157692-f08f-4e09-94a7-378bd9d0412b">
-<br>
 <img width="1467" alt="ecr_repo" src="https://github.com/user-attachments/assets/a38e6a8e-5dce-4297-a4d3-0cb6419d2d12">
+<br>
+<img width="1122" alt="create_aws_ecr_repo" src="https://github.com/user-attachments/assets/38157692-f08f-4e09-94a7-378bd9d0412b">
