@@ -1,7 +1,7 @@
 
 # NimbusECR 🚀  
 
-Welcome to **NimbusECR**! This project demonstrates a full CI/CD pipeline using **GitHub Actions** to build and push a Dockerized Spring Boot application to **Amazon Elastic Container Registry (ECR)**. 🌩️
+Welcome to **NimbusECR**! This  project demonstrates a full CI/CD pipeline using **GitHub Actions** to build and push a Dockerized Spring Boot application to **Amazon Elastic Container Registry (ECR)**. 🌩️
 
 <img width="960" alt="18 (3)" src="https://github.com/user-attachments/assets/56f352b7-4a7c-44d5-8990-c72d1abb85d9">
 
@@ -182,15 +182,15 @@ docker run -p 8080:8080 <your-ecr-uri>:<tag>
 ### Proof Of Concepts
 
 <img width="1512" alt="iam_user" src="https://github.com/user-attachments/assets/f6c1721a-2d6a-454c-8e67-f017fc495615">
-
+<br>
 <img width="1465" alt="image_ecr" src="https://github.com/user-attachments/assets/c1c08002-b48b-489f-8974-a81a33d8545e">
-
+<br>
 <img width="1547" alt="local_docker_logs" src="https://github.com/user-attachments/assets/5681789a-89b9-44a0-a4bd-f00d8b0ab667">
-
+<br>
 <img width="1547" alt="local_docker_logs" src="https://github.com/user-attachments/assets/0e18dcdf-ad65-4432-b8ec-953e516a5d78">
-
+<br>
 <img width="1342" alt="auth_ECR" src="https://github.com/user-attachments/assets/767bae3a-88fb-4b40-a3de-4034d7debae9">
-
+<br>
 <img width="1122" alt="create_aws_ecr_repo" src="https://github.com/user-attachments/assets/38157692-f08f-4e09-94a7-378bd9d0412b">
-
+<br>
 <img width="1467" alt="ecr_repo" src="https://github.com/user-attachments/assets/a38e6a8e-5dce-4297-a4d3-0cb6419d2d12">
