@@ -1,0 +1,50 @@
+name: Build and Push To ECR
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up JDK for Maven build
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      # Step 3: Clean Build Directory
+      - name: Clean Previous Build
+        run: mvn clean
+      
+      # Step 4: Build project
+      - name: Build Project
+        run: mvn install
+
+      # Step 5: Configure AwS Creds
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # Step 6: Login to ECR
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      # Step 7: Build and push to ECR
+      - name: Build and push to Amazon ECR
+        run: |
+          REPO_URI=${{ secrets.AWS_ECR_REGISTRY }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.AWS_ECR_REPO_NAME }}
+          docker build -t $REPO_URI:${{ github.sha }} .
+          docker push $REPO_URI:${{ github.sha }}
